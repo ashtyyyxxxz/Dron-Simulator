@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: Forest Sky
   m_Shader: {fileID: -6465566751694194690, guid: 1affc6b836b61964eb10940ae9aaedda, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -91,19 +91,19 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _CloudAnisotropy: 0.76
-    - _CloudBrightness: 1
+    - _CloudBrightness: 8.91
     - _CloudDensity: 1
     - _CloudHeight: 1
-    - _CloudScale: 1
+    - _CloudScale: 0.6
     - _CloudSoftness: 0.64
     - _CloudSpeed: 1
-    - _CloudThickness: 0.247
-    - _CloudTwirl: 0.5
+    - _CloudThickness: 0.408
+    - _CloudTwirl: 0.46
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DayBrightness: 0.85
+    - _DayBrightness: 0.6
     - _DayScatterStrength: 4.87
-    - _DensityPower: 14.5
+    - _DensityPower: 4
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -121,7 +121,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Saturation: 1
+    - _Saturation: 0.73
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -132,18 +132,18 @@ Material:
     - _StarSize: 0.5
     - _StarSpeed: 1
     - _StarThreshold: 8
-    - _SunIntensity: 30
-    - _SunSize: 0.05
+    - _SunIntensity: 31.84
+    - _SunSize: 0.075
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CloudColour: {r: 1, g: 1, b: 1, a: 1}
+    - _CloudColour: {r: 0, g: 0.85283804, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DayColour: {r: 0.5235849, g: 0.7931354, b: 1, a: 1}
+    - _DayColour: {r: 0.43867922, g: 0.7541323, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EveningColour: {r: 0.9245283, g: 0.36196154, b: 0.494932, a: 1}
+    - _EveningColour: {r: 0.8113208, g: 0.026788909, b: 0.35801318, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _StarColour: {r: 0, g: 0, b: 0, a: 1}
     - _Wavelengths: {r: 638.3, g: 502.3, b: 412.6, a: 0}
