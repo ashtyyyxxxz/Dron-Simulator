@@ -12,6 +12,7 @@ public class Drone : MonoBehaviour
 
     private Vector2 movementXY;
     private Vector2 rotationXY;
+    private bool isControlling;
 
     private void OnEnable()
     {
