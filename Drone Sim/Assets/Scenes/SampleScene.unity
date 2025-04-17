@@ -1044,7 +1044,7 @@ Transform:
   m_GameObject: {fileID: 1423572802}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6999998, y: 0, z: -0.3000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1110,14 +1110,32 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 1.68
+        m_Name: Dissolve Power
+        m_Overridden: 1
+      - m_Value: 4.53
+        m_Name: Dissolve Scale
+        m_Overridden: 1
+      - m_Value: 5
+        m_Name: Dissolve Speed
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: Max Lifetime
+        m_Overridden: 1
+      - m_Value: 0.6
+        m_Name: Min Lifetime
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.38, y: 0.23, z: 0.39}
+        m_Name: Velocity
+        m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 27.718687, y: 8.660488, z: 2.4842212, w: 0}
+      - m_Value: {x: 77.87429, y: 5.4984093, z: 0, w: 0}
         m_Name: Color
         m_Overridden: 1
     m_Uint:
@@ -1131,7 +1149,10 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Name: Fire Texture
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!1 &1497581380
@@ -1267,7 +1288,7 @@ Transform:
   m_GameObject: {fileID: 1845037230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.576125, y: 0.65899974, z: 0.57148683}
+  m_LocalPosition: {x: 5.2000003, y: 0.65899974, z: 2.6000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
