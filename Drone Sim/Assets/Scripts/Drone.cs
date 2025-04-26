@@ -10,12 +10,13 @@ public class Drone : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private InputActionReference movingXYInput;
     [SerializeField] private InputActionReference rotationXYInput;
+    [SerializeField] private InputActionReference toggleControlInput;
 
     private Rigidbody rb;
 
     private Vector2 movementXY;
     private Vector2 rotationXY;
-    [SerializeField] private bool isControlling;
+    [SerializeField] private bool isControlling = false;
 
     private void Awake()
     {
@@ -29,6 +30,8 @@ public class Drone : MonoBehaviour
 
         rotationXYInput.action.performed += ReadRotationValues;
         rotationXYInput.action.canceled += (InputAction.CallbackContext obj) => rotationXY = Vector2.zero;
+
+        toggleControlInput.action.performed += ToggleControllingMode;
     }
 
     private void ReadRotationValues(InputAction.CallbackContext obj)
@@ -56,30 +59,31 @@ public class Drone : MonoBehaviour
         }
     }
 
+    private void ToggleControllingMode(InputAction.CallbackContext obj)
+    {
+        if (percentage <= 0) return;
+        isControlling = !isControlling;
+    }
+
     private void UpdateParameters()
     {
 
     }
 
-    private Vector2 currentRotation; // накопленные углы поворота
+    private Vector2 currentRotation;
 
     private void RotationLogic()
     {
-        // Накопление углов поворота от геймпада
         currentRotation.x += rotationXY.x * rotationSpeed * Time.deltaTime;
         currentRotation.y += rotationXY.y * rotationSpeed * Time.deltaTime;
 
-        // Ограничим вертикальный угол, чтобы не перевернуться
         currentRotation.y = Mathf.Clamp(currentRotation.y, -80f, 80f);
 
-        // Применим поворот через кватернион — стабильно и без дрейфа
         Quaternion targetRotation = Quaternion.Euler(-currentRotation.y, currentRotation.x, 0);
 
-        // Прямое присвоение или плавная интерполяция
         transform.rotation = targetRotation;
 
-        // Или плавный поворот (раскомментируй, если нужно сглаживание):
-        // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
     }
 
 
