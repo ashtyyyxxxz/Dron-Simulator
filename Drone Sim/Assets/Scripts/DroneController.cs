@@ -11,6 +11,7 @@ public class DroneController : MonoBehaviour
     [SerializeField] private InputActionReference toggleArmInput;
     [SerializeField] private InputActionReference toggleModeInput;
     [SerializeField] private InputActionReference changeCameraModeInput;
+    [SerializeField] private InputActionReference releaseItemsInput;
 
     [Header("Other Properties")]
     [SerializeField] private float percent = 100;
@@ -18,6 +19,7 @@ public class DroneController : MonoBehaviour
     [SerializeField] private Transform tablet;
     [SerializeField] private TextMeshProUGUI percentText;
     [SerializeField] private TextMeshProUGUI pingText;
+    [SerializeField] private TextMeshProUGUI inventoryText;
     [SerializeField] private Transform cam;
     [SerializeField] private Transform[] cameraPositions;
     private float realPing;
@@ -30,6 +32,10 @@ public class DroneController : MonoBehaviour
     [SerializeField] private float movePower = 5f;
     [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private float tiltSpeed = 50f;
+
+    [Header("Player Components To Manipulate")]
+    [SerializeField] private GameObject playerMovement;
+    [SerializeField] private GameObject playerRot;
 
     private Vector2 leftInput = Vector2.zero;
     private Vector2 rightInput = Vector2.zero;
@@ -61,6 +67,8 @@ public class DroneController : MonoBehaviour
         toggleModeInput.action.performed += ctx => ToggleStabilizationMode();
 
         changeCameraModeInput.action.performed += ChangeCameraMode;
+
+        releaseItemsInput.action.performed += ReleaseItemsFromInventory;
     }
 
     private void OnDisable()
@@ -73,7 +81,8 @@ public class DroneController : MonoBehaviour
     {
         realPing = Vector3.Distance(transform.position,tablet.transform.position)*2 + 30;
         shownPing = UnityEngine.Random.Range(realPing-2,realPing+2);
-        if (!isArmed && percent > 0 && shownPing > 500) return;
+        if (!isArmed) return;
+        if (percent < 0 || realPing > 500) return;
 
         percent -= 0.1f * Time.deltaTime;
         percentText.text = $"Заряд батареи: {Mathf.Round(percent)}%";
@@ -96,6 +105,9 @@ public class DroneController : MonoBehaviour
     private void ToggleArm(InputAction.CallbackContext context)
     {
         isArmed = !isArmed;
+
+        playerMovement.SetActive(!isArmed);
+        playerRot.SetActive(!isArmed);
 
         if (isArmed)
         {
@@ -157,9 +169,14 @@ public class DroneController : MonoBehaviour
     }
     #endregion
 
-    private void ReleaseItemsFromInventory()
+    private void ReleaseItemsFromInventory(InputAction.CallbackContext context)
     {
+        if(holdingItem == null) return;
 
+        holdingItem.transform.localPosition = new Vector3(1, 0, -1);
+        holdingItem.SetActive(true);
+        holdingItem = null;
+        inventoryText.text = "Y, чтобы выбросить текущий предмет в инвентаре трона \nТекущий предмет: Ничего.";
     }
 
     private void OnTriggerEnter(Collider other)
@@ -167,7 +184,9 @@ public class DroneController : MonoBehaviour
         if (other.CompareTag("ItemForDrone") && holdingItem == null)
         {
             holdingItem = other.gameObject;
-            //Destroy(other.gameObject);
+            holdingItem.SetActive(false);
+            holdingItem.transform.parent = transform;
+            inventoryText.text = $"Y,чтобы выбросить текущий предмет в инвентаре трона \nТекущий предмет: {holdingItem.name}";
         }
     }
 }
