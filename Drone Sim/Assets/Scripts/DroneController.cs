@@ -23,6 +23,8 @@ public class DroneController : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private Transform[] cameraPositions;
     private float realPing;
+    [SerializeField] private float speedOfRotation;
+    [SerializeField] private Transform[] propellers;
 
     [Header("Inventory")]
     [SerializeField] private GameObject holdingItem;
@@ -92,6 +94,18 @@ public class DroneController : MonoBehaviour
         HandleYaw();
         HandleMovement();
         HandleStabilization();
+
+        for(int i = 0; i < propellers.Length; i++)
+        {
+            if(i < 4)
+            {
+                propellers[i].Rotate(Vector3.forward * speedOfRotation);
+            }
+            else
+            {
+                propellers[i].Rotate(Vector3.forward * -speedOfRotation);
+            }
+        }
     }
 
     #region DroneControlling

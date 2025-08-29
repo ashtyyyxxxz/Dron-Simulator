@@ -8491,42 +8491,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.8662
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8662
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.8662
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.137
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.096
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 28.862
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.08525276
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9963594
-      objectReference: {fileID: 0}
-    - target: {fileID: 3333217238792013021, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -189.781
-      objectReference: {fileID: 0}
     - target: {fileID: 6292764603524686010, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
       propertyPath: m_Name
       value: Drone Setup
@@ -8579,14 +8543,6 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 1711464917}
-    - target: {fileID: 8968026846159771195, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.2374122
-      objectReference: {fileID: 0}
-    - target: {fileID: 8968026846159771195, guid: 75a9cc5d784faf24d84481a98a31c416, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 16.87179
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
